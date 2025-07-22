@@ -12,6 +12,7 @@ import third from "../src/images/third.webp";
 import ParentToChildFun from "./component/ParentToChildFun";
 import { useState } from "react";
 import StateLifting from "./component/StateLifting";
+import ConditionalRendering from "./component/ConditionalRendering";
 
 function App() {
   // const [count, setCount] = useState(0);
@@ -20,7 +21,7 @@ function App() {
   //   setCount(count + 1);
   // }
 
-  const [name, setName] = useState("");
+  // const [name, setName] = useState("");
 
   return (
     <>
@@ -51,12 +52,14 @@ function App() {
 
       {/* <ParentToChildFun handleClick={handleClick} text="click me" />
       <h1>Count: {count}</h1> */}
-      <div>
-        <StateLifting title="card1" name={name} setName={setName} />
-        <StateLifting title="card2" name={name} setName={setName} />
+      {/* <div> */}
+      {/* <StateLifting title="card1" name={name} setName={setName} /> */}
+      {/* <StateLifting title="card2" name={name} setName={setName} /> */}
 
-        {/* <p>I am inside Parent component and value of a nmae is {name}</p> */}
-      </div>
+      {/* <p>I am inside Parent component and value of a nmae is {name}</p> */}
+      {/* </div> */}
+
+      <ConditionalRendering />
     </>
   );
 }
