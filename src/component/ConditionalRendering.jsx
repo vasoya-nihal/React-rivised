@@ -4,8 +4,10 @@ import LoginBtn from "./LoginBtn";
 import { useState } from "react";
 
 const ConditionalRendering = () => {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
-
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  if (!isLoggedIn) {
+    return <LoginBtn />;
+  }
   return (
     <div>
       <h1>
