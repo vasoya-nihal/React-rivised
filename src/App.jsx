@@ -14,6 +14,76 @@ import { useState } from "react";
 import StateLifting from "./component/StateLifting";
 import ConditionalRendering from "./component/ConditionalRendering";
 
+//
+//
+//
+//
+//
+//
+import Home from "./component/Home";
+import About from "./component/About";
+import Dashboard from "./component/Dashboard";
+import NavBar from "./component/NavBar";
+import ParamComp from "./component/ParamComp";
+import Courses from "./component/Courses";
+import MockTest from "./component/MockTest";
+import Reports from "./component/Reports";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: (
+      <div>
+        <NavBar />
+        <Home />
+      </div>
+    ),
+  },
+
+  {
+    path: "/about",
+    element: (
+      <div>
+        <NavBar />
+        <About />
+      </div>
+    ),
+  },
+  {
+    path: "/dashboard",
+    element: (
+      <div>
+        <NavBar />
+        <Dashboard />
+      </div>
+    ),
+    children: [
+      {
+        path: "courses",
+        element: <Courses />,
+      },
+      {
+        path: "mocktest",
+        element: <MockTest />,
+      },
+      {
+        path: "reports",
+        element: <Reports />,
+      },
+    ],
+  },
+  {
+    path: "/student/:id",
+    element: (
+      <div>
+        <NavBar />
+        <ParamComp />
+      </div>
+    ),
+  },
+]);
+
 function App() {
   // const [count, setCount] = useState(0);
 
@@ -59,7 +129,16 @@ function App() {
       {/* <p>I am inside Parent component and value of a nmae is {name}</p> */}
       {/* </div> */}
 
-      <ConditionalRendering />
+      {/* <ConditionalRendering /> */}
+
+      {/*  */}
+
+      {/*  */}
+
+      {/*  */}
+      <div>
+        <RouterProvider router={router} />
+      </div>
     </>
   );
 }
